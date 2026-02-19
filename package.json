@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-root",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build:frontend": "npm run build --prefix frontend",
+    "build:vue": "npm run build --prefix frontend/my-vue-app",
+    "build": "npm run build:frontend && npm run build:vue && node backend/scripts/copy-dist.js",
+    "start:backend": "npm --prefix backend start",
+    "start": "npm run build && npm run start:backend"
+  }
+}
